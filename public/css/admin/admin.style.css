@@ -1,0 +1,14 @@
+.categorie-img
+{
+    width: 120px;
+}
+
+.person_icon :hover
+{
+    background-color: rgba(137, 43, 226, 0.377);
+}
+
+.ui-menu
+{
+    z-index: 3500 !important;
+}

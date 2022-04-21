@@ -1,0 +1,47 @@
+@extends('layouts.admin')
+
+@section('title', 'Utilisateurs')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-9"><h3 class="pt-2">Employés </h3> </div>
+                        <div class="col-md-3"><h5 class="float-end pt-2"><a href="{{ url('/ajout-employes') }}" class="btn btn-primary">Ajout d'un employé</a></h5></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom & Prenoms</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td class="pt-3">{{ $user -> id }}</td>
+                                    <td class="pt-3">{{ $user -> name . ' ' . $user -> pnom  }}</td>
+                                    <td class="pt-3">{{ $user -> email }}</td>
+                                    <td class="pt-3">{{ $user -> tel }}</td>
+                                    <td>
+                                        <a href="{{url('user/' . $user -> id )}}" class="btn btn-dark">Voir les données</a>
+                                        <a href="{{url('delete-user/' . $user -> id )}}" class="btn btn-danger">Supprimer</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

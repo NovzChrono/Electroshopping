@@ -1,0 +1,50 @@
+@extends('layouts.admin')
+
+@section('title')
+    Ajout d'une catégorie
+@endsection
+
+@section('content')
+    <div class="card">
+        <div class="card-header">
+            <h3>Ajout d'un categorie de materiel</h3>
+        </div>
+        <div class="card-body">
+            @if ($errors -> any())
+                @foreach ($errors->All() as $error )
+                    <div class="container text-danger text-center">{{$error}}</div>
+                @endforeach
+                <hr>
+            @endif
+            <form action="{{url('insert-categorie')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="libelle">
+                    </div>
+                    <div class="col-md-12 mb-5">
+                        <label for="descrip">Description</label>
+                        <textarea class="form-control" name="description" id="descrip" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="statut">Statut</label>
+                        <input type="checkbox" id="statut" name="statut">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="popu">Tendance</label>
+                        <input type="checkbox" id="popu" name="popular">
+                    </div>
+                    <div class="col-md-12 mb-4 ">
+                        <label for="img">Image</label>
+                        <input type="file" class="form-control" id="img" name="image">
+                    </div>
+                    <div class="col-md-12 text-center mb-3">
+                        <button type="submit" class="btn btn-primary">Ajouté</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+@endsection

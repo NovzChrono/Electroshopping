@@ -1,0 +1,108 @@
+.hover_mat:hover
+{
+    box-shadow: 0px 0px .5em rgb(235, 235, 235), -1px 0 .5em rgb(235, 235, 232);
+}
+a
+{
+    text-decoration: none;
+}
+.hover_lien:hover
+{
+  color:#00a2ff;
+}
+.ui-menu
+{
+  z-index: 3500 !important;
+  border: none !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-size: 1.1em !important;
+
+}
+
+.ui-state-hover,
+.ui-state-active,
+.ui-state-focus {
+  font-size: 1.1em !important;
+  text-decoration: none !important;
+  color: #262626 !important;
+  background-color: #f7fdc0 !important;
+  border:1px solid #f5f5f5 !important;
+  cursor: pointer !important;
+}
+
+.form-inputs {
+    position: relative
+}
+
+@media(min-width:577px) {
+  .img-materiel
+  {
+    height:200px;
+  }
+}
+@media(max-width:576px) {
+  .img-materiel
+  {
+    height:none;
+  }
+}
+
+@media(min-width:577px) {
+
+  .form-inputs .form-control {
+      height: 45px;
+      width: 650px;
+  }
+
+}
+
+@media(max-width:576px) {
+  .form-inputs .form-control {
+    height: 40px;
+    width: none;
+  }
+}
+.form-inputs .form-control:focus {
+    box-shadow: none;
+    border: 1px solid #000
+}
+
+.form-inputs i {
+    position: absolute;
+    right: 10px;
+    top: 7px
+}
+
+
+.lien_footer
+{
+    color:white
+}
+
+/* rating */
+.rating-css div {
+    color: #ffe400;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0;
+  }
+  .rating-css input {
+    display: none;
+  }
+  .rating-css input + label {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .rating-css input:checked + label ~ label {
+    color: #b4afaf;
+  }
+  .rating-css label:active {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+  }
+
+/* End of Star Rating */
